@@ -21,7 +21,7 @@ import { ModuleFinder } from '../../utils/module.finder';
 import { Location, NameParser } from '../../utils/name.parser';
 import { mergeSourceRoot } from '../../utils/source-root.helpers';
 
-import { DynModOptions } from './dynmod.schema';
+import { VideoResourceOptions } from './video-resource.schema';
 
 import {
   lowerCase,
@@ -29,7 +29,7 @@ import {
   dashToUnderscore,
 } from '../../utils/string-utils';
 
-export function main(options: DynModOptions): Rule {
+export function main(options: VideoResourceOptions): Rule {
   options = transform(options);
   return (tree: Tree, context: SchematicContext) => {
     return branchAndMerge(
@@ -42,8 +42,8 @@ export function main(options: DynModOptions): Rule {
   };
 }
 
-function transform(options: DynModOptions): DynModOptions {
-  const target: DynModOptions = Object.assign({}, options);
+function transform(options: VideoResourceOptions): VideoResourceOptions {
+  const target: VideoResourceOptions = Object.assign({}, options);
 
   target.metadata = 'imports';
   target.type = 'module';
@@ -55,7 +55,7 @@ function transform(options: DynModOptions): DynModOptions {
   return target;
 }
 
-function generate(options: DynModOptions) {
+function generate(options: VideoResourceOptions) {
   return (context: SchematicContext) =>
     apply(url(join('./files' as Path, options.language)), [
       template({
@@ -69,7 +69,7 @@ function generate(options: DynModOptions) {
     ])(context);
 }
 
-function addDeclarationToModule(options: DynModOptions): Rule {
+function addDeclarationToModule(options: VideoResourceOptions): Rule {
   return (tree: Tree) => {
     if (options.skipImport !== undefined && options.skipImport) {
       return tree;

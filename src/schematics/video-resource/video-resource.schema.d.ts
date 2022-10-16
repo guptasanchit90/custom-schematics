@@ -1,4 +1,4 @@
-export interface DynModOptions {
+export interface VideoResourceOptions {
   /**
    * The name of the module.
    */

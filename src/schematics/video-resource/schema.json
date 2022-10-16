@@ -1,7 +1,7 @@
 {
   "$schema": "http://json-schema.org/schema",
-  "id": "DynamicModuleschema",
-  "title": "Nest Dynamic Module Options Schema",
+  "$id": "VideoResourceModuleschema",
+  "title": "Nest Video Resource Options Schema",
   "type": "object",
   "properties": {
     "name": {
