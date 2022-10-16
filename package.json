@@ -1,5 +1,5 @@
 {
-  "name": "@nestjsplus/dyn-schematics-custom",
+  "name": "@nestjsplus/custom-schematics",
   "version": "1.0.12",
   "description": "NestJS Dynamic Module Schematics for @nestjs/cli",
   "author": "John Biundo <johnfbiundo@gmail.com>",
